@@ -43,10 +43,6 @@ ui <- fluidPage(
         tags$a(href = "https://drive.google.com/drive/folders/1yyBEOMKQ92IfBRv4l1e_5yXWkucfOGQv?usp=sharing", target = "_blank", "His Career")
       ),
       tags$div(class = "album-block",
-        tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/sweethearts.jpg", class = "album-img"),
-        tags$a(href = "https://www.youtube.com/watch?v=zIEk_ebHFaU", target = "_blank", "Cath & Lynn: Junior High Sweethearts")
-      ),
-      tags$div(class = "album-block",
         tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/ourdad.jpg", class = "album-img"),
         tags$a(href = "https://drive.google.com/drive/folders/1qoXjkCM_cF0GeLoopJJJMXQ6ef3mFkwf?usp=sharing", target = "_blank", "Our Dad")
       ),
@@ -68,19 +64,17 @@ ui <- fluidPage(
   tags$br(),
 
   tags$div(style = "text-align:center",
-    tags$h3("Watch 'The Boys of Fall '64'"),
-    tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/axIQPiE-StU", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA)
+    tags$h3("Video Tributes"),
+    tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/axIQPiE-StU", frameborder="0",
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA),
+    tags$br(), tags$br(),
+    tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/zIEk_ebHFaU", frameborder="0",
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA)
   )
 )
 
 server <- function(input, output, session) {
   # No server logic needed for this static app
 }
-
-shinyApp(ui, server)
-
-
-
-server <- function(input, output, session) {}
 
 shinyApp(ui, server)
