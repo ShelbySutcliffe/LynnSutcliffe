@@ -1,83 +1,110 @@
 library(shiny)
-library(shinydashboard)
+library(shinythemes)
 
-ui <- dashboardPage(
-  dashboardHeader(title = "S. Lynn Sutcliffe 1943–2024"),
-  dashboardSidebar(disable = TRUE),
-  dashboardBody(
-    tags$head(
-      tags$style(HTML("
-        .cover {
-          position: relative;
-          width: 100%;
-          text-align: center;
-          margin-bottom: 30px;
-        }
-        .cover img {
-          width: 100%;
-          height: auto;
-          border-radius: 10px;
-        }
-        .cover-text {
-          position: absolute;
-          top: 40%;
-          width: 100%;
-          color: white;
-          font-size: 2.5em;
-          font-weight: bold;
-          text-shadow: 2px 2px 8px #000;
-        }
-        .section-links {
-          font-size: 1.2em;
-          margin-bottom: 20px;
-        }
-        .upload-button {
-          background-color: #f39c12;
-          color: white;
-          padding: 15px;
-          border: none;
-          border-radius: 8px;
-          font-size: 1.3em;
-          margin: 30px 0;
-        }
-      "))
+ui <- fluidPage(
+  theme = shinytheme("flatly"),
+
+  tags$head(
+    tags$style(HTML("
+      .album-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .album-title {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    "))
+  ),
+
+  titlePanel(NULL),
+
+  # Cover image and heading
+  fluidRow(
+    column(12, align = "center",
+           img(src = "SLS_COVER.jpg", height = "300px"),
+           h2("S. Lynn Sutcliffe 1943–2024"),
+           h4("A Celebration of His Life"),
+           br()
+    )
+  ),
+
+  # Guest Upload Button
+  fluidRow(
+    column(12, align = "center",
+           tags$a(
+             href = "https://drive.google.com/drive/folders/1Puep4x6BewUvSiwDsHibGBkhHewcpRYD?usp=sharing",
+             class = "btn btn-danger btn-lg",
+             "Virtual or In Person Celebration of Life Guests, Add Your Photos Here",
+             target = "_blank"
+           ),
+           br(), br()
+    )
+  ),
+
+  # Album grid
+  fluidRow(
+    column(4, align = "center",
+           img(src = "sls.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("SLS", href = "https://drive.google.com/drive/folders/10I-5gDPnreyFNKtDJA9L16cp4ON7suUi", target = "_blank"))
     ),
-    
-    div(class = "cover",
-        img(src = "SLS_COVER.jpg"),
-        div(class = "cover-text", "S. Lynn Sutcliffe 1943–2024: A Celebration of His Life")
+    column(4, align = "center",
+           img(src = "bellevue.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Bellevue Buddies", href = "https://drive.google.com/drive/folders/14s23K6wEK_Av_Dk-fqkX71dmh7RiYDcN", target = "_blank"))
     ),
-    
-    div(class = "section-links", HTML("
-      <ul>
-        <li><a href='https://drive.google.com/drive/folders/10I-5gDPnreyFNKtDJA9L16cp4ON7suUi?usp=sharing' target='_blank'>SLS</a></li>
-        <li><a href='https://drive.google.com/drive/folders/14s23K6wEK_Av_Dk-fqkX71dmh7RiYDcN?usp=sharing' target='_blank'>Bellevue Buddies</a></li>
-        <li><a href='https://drive.google.com/drive/folders/0ByG4Ynkjp669aHZsWVFoMXJaUTg?resourcekey=0-HFdxtnOrW_cYI1EbAjWv-Q&usp=sharing' target='_blank'>Bernardsville</a></li>
-        <li><a href='https://drive.google.com/drive/folders/1OCi_4kyTldwQnsAmyffBF8rTAiQyU9Mm?usp=sharing' target='_blank'>DC</a></li>
-        <li><a href='https://drive.google.com/drive/folders/1yyBEOMKQ92IfBRv4l1e_5yXWkucfOGQv?usp=sharing' target='_blank'>His Career</a></li>
-        <li><a href='https://drive.google.com/drive/folders/1JxDizx8lTjpsefbi1mNTr6bpuslOjVeu?usp=sharing' target='_blank'>Junior High Sweethearts</a></li>
-        <li><a href='https://drive.google.com/drive/folders/1qoXjkCM_cF0GeLoopJJJMXQ6ef3mFkwf?usp=sharing' target='_blank'>Our Dad</a></li>
-        <li><a href='https://drive.google.com/drive/folders/1Lk0Z0hqWnTB1BXIhrQOdGzw69arsWec3?usp=sharing' target='_blank'>Our Grandad</a></li>
-        <li><a href='https://drive.google.com/drive/folders/14oE8fhDCk4eVAd5JIz6xnQkJKNR26A1Y?usp=sharing' target='_blank'>Over the Years</a></li>
-        <li><a href='https://drive.google.com/drive/folders/1EEeXlSzc_NLNusY_PVd9SIOwxhSPM12_?usp=sharing' target='_blank'>Princeton Peeps</a></li>
-      </ul>
-    ")),
-
-    div(
-      actionButton("uploadBtn", "Virtual or In Person Celebration of Life Guests, Add Your Photos Here",
-                   onclick = "window.open('https://drive.google.com/drive/folders/1Puep4x6BewUvSiwDsHibGBkhHewcpRYD?usp=sharing', '_blank')",
-                   class = "upload-button")
+    column(4, align = "center",
+           img(src = "bernardsville.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Bernardsville", href = "https://drive.google.com/drive/folders/0ByG4Ynkjp669aHZsWVFoMXJaUTg?resourcekey=0-HFdxtnOrW_cYI1EbAjWv-Q", target = "_blank"))
+    )
+  ),
+  fluidRow(
+    column(4, align = "center",
+           img(src = "career.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("His Career", href = "https://drive.google.com/drive/folders/1yyBEOMKQ92IfBRv4l1e_5yXWkucfOGQv", target = "_blank"))
     ),
-
-    tags$hr(),
-
-    h3("Featured Videos"),
-    tags$ul(
-      tags$li(tags$a(href = "https://www.youtube.com/watch?v=zIEk_ebHFaU", target = "_blank", "Cath & Lynn: Junior High Sweethearts")),
-      tags$li(tags$a(href = "https://www.youtube.com/watch?v=axIQPiE-StU", target = "_blank", "Boys of Fall '64"))
+    column(4, align = "center",
+           img(src = "sweethearts.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Junior High Sweethearts", href = "https://drive.google.com/drive/folders/1JxDizx8lTjpsefbi1mNTr6bpuslOjVeu", target = "_blank"))
+    ),
+    column(4, align = "center",
+           img(src = "ourdad.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Our Dad", href = "https://drive.google.com/drive/folders/1qoXjkCM_cF0GeLoopJJJMXQ6ef3mFkwf", target = "_blank"))
+    )
+  ),
+  fluidRow(
+    column(4, align = "center",
+           img(src = "ourgrandad.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Our Grandad", href = "https://drive.google.com/drive/folders/1Lk0Z0hqWnTB1BXIhrQOdGzw69arsWec3", target = "_blank"))
+    ),
+    column(4, align = "center",
+           img(src = "years.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Over the Years", href = "https://drive.google.com/drive/folders/14oE8fhDCk4eVAd5JIz6xnQkJKNR26A1Y", target = "_blank"))
+    ),
+    column(4, align = "center",
+           img(src = "princeton.jpg", class = "album-img"),
+           div(class = "album-title",
+               tags$a("Princeton Peeps", href = "https://drive.google.com/drive/folders/1EEeXlSzc_NLNusY_PVd9SIOwxhSPM12_", target = "_blank"))
     )
   )
 )
+
+server <- function(input, output, session) {}
+
+shinyApp(ui, server)
+
 
 server <- function(input, output, session) {}
 
