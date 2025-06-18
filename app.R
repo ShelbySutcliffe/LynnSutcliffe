@@ -3,7 +3,7 @@ library(shinythemes)
 
 ui <- fluidPage(
   theme = shinytheme("flatly"),
-  tags$head(tags$style(HTML(".album-img { width: 100%; max-width: 250px; border-radius: 15px; margin-bottom: 10px; } .album-block { display: inline-block; margin: 15px; text-align: center; vertical-align: top; } .main-cover { width: 100%; max-width: 500px; border-radius: 20px; margin-bottom: 20px; } .special-button { background-color: #2e6b3d; color: white; padding: 10px 20px; border-radius: 10px; font-size: 18px; text-decoration: none; display: inline-block; margin: 20px 0; } h2, h3, a { font-family: \"Lucida Handwriting\", cursive; color: #2c3e50; }"))),
+  tags$head(tags$style(HTML(".album-img { width: 100%; max-width: 250px; border-radius: 15px; margin-bottom: 10px; } .album-block { display: inline-block; margin: 15px; text-align: center; vertical-align: top; } .main-cover { width: 100%; max-width: 500px; border-radius: 20px; margin-bottom: 20px; } .special-button { background-color: #2e6b3d; color: white; padding: 10px 20px; border-radius: 10px; font-size: 18px; text-decoration: none; display: inline-block; margin: 20px 0; } h2, h3, a { font-family: 'Lucida Handwriting', cursive; color: #2c3e50; }"))),
 
   titlePanel(""),
 
@@ -18,6 +18,12 @@ ui <- fluidPage(
     tags$a(href = "https://drive.google.com/drive/folders/1Puep4x6BewUvSiwDsHibGBkhHewcpRYD?usp=sharing",
            class = "special-button", target = "_blank",
            "Virtual or In-Person Celebration of Life Guests: Add Your Photos Here")
+  ),
+
+  tags$div(style = "text-align:center",
+    tags$a(href = "https://forms.gle/your-google-form-link",  # Replace with actual Google Form URL
+           class = "special-button", target = "_blank",
+           "Sign the Guest Book")
   ),
 
   tags$div(style = "text-align:center",
@@ -65,9 +71,11 @@ ui <- fluidPage(
 
   tags$div(style = "text-align:center",
     tags$h3("Video Tributes"),
+    tags$h4("Watch 'The Boys of Fall '64"),
     tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/axIQPiE-StU", frameborder="0",
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA),
     tags$br(), tags$br(),
+    tags$h4("Watch 'Cath & Lynn: Junior High Sweethearts"),
     tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/zIEk_ebHFaU", frameborder="0",
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA)
   )
@@ -78,3 +86,4 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+
