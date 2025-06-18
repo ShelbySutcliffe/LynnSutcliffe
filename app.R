@@ -7,12 +7,10 @@ ui <- fluidPage(
 
   titlePanel(""),
 
-  tags$div(style = "text-align:center",
-           tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/SLS_COVER.jpg",
-                    class = "main-cover"),
-           tags$h2("S. Lynn Sutcliffe 1943–2024"),
-           tags$h3("A Celebration of His Life")
-  ),
+ tags$div(style = "text-align:center",
+         tags$h2("S. Lynn Sutcliffe 1943–2024"),
+         tags$h3("A Celebration of His Life")
+),
 
   tags$div(style = "text-align:center",
     tags$a(href = "https://drive.google.com/drive/folders/1Puep4x6BewUvSiwDsHibGBkhHewcpRYD?usp=sharing",
