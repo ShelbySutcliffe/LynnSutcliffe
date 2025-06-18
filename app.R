@@ -21,7 +21,7 @@ ui <- fluidPage(
   ),
 
   tags$div(style = "text-align:center",
-    tags$a(href = "https://forms.gle/your-google-form-link",  # Replace with actual Google Form URL
+    tags$a(href = "https://docs.google.com/forms/d/e/1FAIpQLSehYnXp0lpBA4JuVN54xPkuabPiM-qE6s3m98qfOfEcjzDUYw/viewform?usp=header",
            class = "special-button", target = "_blank",
            "Sign the Guest Book")
   ),
@@ -72,12 +72,12 @@ ui <- fluidPage(
   tags$div(style = "text-align:center",
     tags$h3("Video Tributes"),
     tags$h4("Watch 'The Boys of Fall '64"),
-    tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/axIQPiE-StU", frameborder="0",
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA),
+    tags$a(href = "https://www.youtube.com/watch?v=axIQPiE-StU", target = "_blank",
+           tags$img(src = "https://img.youtube.com/vi/axIQPiE-StU/0.jpg", width="300px", style="border-radius:10px;")),
     tags$br(), tags$br(),
     tags$h4("Watch 'Cath & Lynn: Junior High Sweethearts"),
-    tags$iframe(width="560", height="315", src="https://www.youtube.com/embed/zIEk_ebHFaU", frameborder="0",
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen = NA)
+    tags$a(href = "https://www.youtube.com/watch?v=zIEk_ebHFaU", target = "_blank",
+           tags$img(src = "https://img.youtube.com/vi/zIEk_ebHFaU/0.jpg", width="300px", style="border-radius:10px;"))
   )
 )
 
@@ -86,4 +86,5 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+
 
