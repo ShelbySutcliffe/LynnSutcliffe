@@ -37,14 +37,16 @@ ui <- fluidPage(
       font-family: 'Lucida Handwriting', cursive;
       color: #2c3e50;
     }
-    .album-title {
+    .album-link {
+      font-family: 'Lucida Handwriting', cursive;
       font-size: 20px;
       display: block;
       margin-top: 5px;
       margin-bottom: 10px;
+      text-decoration: none;
     }
     @media (max-width: 768px) {
-      .album-title {
+      .album-link {
         font-size: 22px;
       }
       .special-button {
@@ -73,50 +75,50 @@ ui <- fluidPage(
   ),
 
   tags$div(style = "text-align:center",
-           tags$h3("Click on album TITLE below to view photos")
+           tags$h3("Click on album title below to view photos")
   ),
 
   fluidRow(
     column(12, align = "center",
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/sls.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "SLS"),
-                    tags$a(href = "https://drive.google.com/drive/folders/10I-5gDPnreyFNKtDJA9L16cp4ON7suUi?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/10I-5gDPnreyFNKtDJA9L16cp4ON7suUi?usp=sharing", 
+                           class = "album-link", target = "_blank", "SLS")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/bellevue.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "Bellevue Buddies"),
-                    tags$a(href = "https://drive.google.com/drive/folders/14s23K6wEK_Av_Dk-fqkX71dmh7RiYDcN?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/14s23K6wEK_Av_Dk-fqkX71dmh7RiYDcN?usp=sharing", 
+                           class = "album-link", target = "_blank", "Bellevue Buddies")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/bernardsville.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "Bernardsville"),
-                    tags$a(href = "https://drive.google.com/drive/folders/0ByG4Ynkjp669aHZsWVFoMXJaUTg?resourcekey=0-HFdxtnOrW_cYI1EbAjWv-Q&usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/0ByG4Ynkjp669aHZsWVFoMXJaUTg?resourcekey=0-HFdxtnOrW_cYI1EbAjWv-Q&usp=sharing", 
+                           class = "album-link", target = "_blank", "Bernardsville")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/career.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "His Career"),
-                    tags$a(href = "https://drive.google.com/drive/folders/1yyBEOMKQ92IfBRv4l1e_5yXWkucfOGQv?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/1yyBEOMKQ92IfBRv4l1e_5yXWkucfOGQv?usp=sharing", 
+                           class = "album-link", target = "_blank", "His Career")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/ourdad.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "Our Dad"),
-                    tags$a(href = "https://drive.google.com/drive/folders/1qoXjkCM_cF0GeLoopJJJMXQ6ef3mFkwf?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/1qoXjkCM_cF0GeLoopJJJMXQ6ef3mFkwf?usp=sharing", 
+                           class = "album-link", target = "_blank", "Our Dad")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/ourgrandad.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "Our Grandad"),
-                    tags$a(href = "https://drive.google.com/drive/folders/1Lk0Z0hqWnTB1BXIhrQOdGzw69arsWec3?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/1Lk0Z0hqWnTB1BXIhrQOdGzw69arsWec3?usp=sharing", 
+                           class = "album-link", target = "_blank", "Our Grandad")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/years.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "Over the Years"),
-                    tags$a(href = "https://drive.google.com/drive/folders/14oE8fhDCk4eVAd5JIz6xnQkJKNR26A1Y?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/14oE8fhDCk4eVAd5JIz6xnQkJKNR26A1Y?usp=sharing", 
+                           class = "album-link", target = "_blank", "Over the Years")
            ),
            tags$div(class = "album-block",
                     tags$img(src = "https://raw.githubusercontent.com/ShelbySutcliffe/LynnSutcliffe/main/princeton.jpg", class = "album-img"),
-                    tags$span(class = "album-title", "Princeton Peeps"),
-                    tags$a(href = "https://drive.google.com/drive/folders/1EEeXlSzc_NLNusY_PVd9SIOwxhSPM12_?usp=sharing", target = "_blank", "View Photos")
+                    tags$a(href = "https://drive.google.com/drive/folders/1EEeXlSzc_NLNusY_PVd9SIOwxhSPM12_?usp=sharing", 
+                           class = "album-link", target = "_blank", "Princeton Peeps")
            )
     )
   ),
@@ -136,7 +138,7 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  # No server logic needed for this static app
+  # No server logic needed
 }
 
 shinyApp(ui, server)
